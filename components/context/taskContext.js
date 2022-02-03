@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 
 export const TaskContext = createContext();
 export const useTask = () => {
-	// este hook permite que no tenga que llamar useContext cada vez
+// este hook permite que no tenga que llamar useContext cada vez
 	return useContext(TaskContext);
 };
 
@@ -16,7 +16,7 @@ const TaskProvider = ({ children }) => {
 		setTasks([...tasks, { title, description, id: uuid() }]);
 	};
 
-	const updateTask = (id, updatedTask) =>
+const updateTask = (id, updatedTask) =>
 		setTasks([
 			...tasks.map((task) =>
 				task.id === id ? { ...task, ...updatedTask } : task
